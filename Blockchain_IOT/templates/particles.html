@@ -1,0 +1,518 @@
+{% extends "home.html" %}
+{% load staticfiles %}
+
+{% block navbar %}
+<link rel="stylesheet" media="screen" href="{% static "/css/particles.css" %}">
+
+<!-- particles.js container -->
+
+<div id="particles-js">
+
+</div> <!-- For particles js div -->
+
+
+<div class="row" style="margin: auto">
+    <div class="col-lg-2 col-sm-6">
+      <div class="card h-100">
+        <div class="card-body" align="center">
+          <h5 class="card-title">Seed</h5>
+          <p class="card-text">The seeds are planted into the soil</p>
+          <!-- <a href=" {% url 'particles' %} " class="btn" name="seedbtn">Click here to view more</a> -->
+          <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+          <form class="Btn_display" method="post">
+          {% csrf_token %}
+            <input class = "btn" type="submit" name="seedbtn" value="Click here to view more">
+          </form>
+        </div>
+      </div>
+    </div>
+
+<!-- <span class="glyphicon glyphicon-link" aria-hidden="true"></span> -->
+
+    <div class="col-lg-2 col-sm-6">
+      <div class="card h-100">
+        <div class="card-body" align="center">
+          <h5 class="card-title">Sapling </h5>
+          <p class="card-text">Saplings of around 12 inches</p>
+          <!-- <a href="{% url 'particles' %}" class="btn" name="saplingsbtn">Click here to view more</a> -->
+          <form class="Btn_display" method="post">
+          {% csrf_token %}
+            <input class = "btn" type="submit" name="saplingsbtn" value="Click here to view more">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-2 col-sm-6">
+      <div class="card h-100">
+        <div class="card-body" align="center">
+          <h5 class="card-title">Plant</h5>
+          <p class="card-text">Plant of around 3 feet</p>
+          <!-- <a href="{% url 'particles' %}" class="btn" name="plantbtn">Click here to view more</a> -->
+          <form class="Btn_display" method="post">
+          {% csrf_token %}
+            <input class = "btn" type="submit" name="plantbtn" value="Click here to view more">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-2 col-sm-6">
+      <div class="card h-100">
+        <div class="card-body" align="center">
+          <h5 class="card-title">Flower Stage</h5>
+          <p class="card-text">Flower formation at each plant's </p>
+          <!-- <a href="{% url 'particles' %}" class="btn" name="flowerbtn">Click here to view more</a> -->
+          <form class="Btn_display" method="post">
+          {% csrf_token %}
+            <input class = "btn" type="submit" name="flowerbtn" value="Click here to view more">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-2 col-sm-6">
+      <div class="card h-100">
+        <div class="card-body" align="center">
+          <h5 class="card-title">Fruit Development</h5>
+          <p class="card-text">Fruit formation starts at this stage</p>
+          <!-- <a href="{% url 'particles' %}" class="btn" name="fruitbtn">Click here to view more</a> -->
+          <form class="Btn_display" method="post">
+          {% csrf_token %}
+            <input class = "btn" type="submit" name="fruitbtn" value="Click here to view more">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-2 col-sm-6">
+      <div class="card h-100">
+        <div class="card-body" align="center">
+          <h5 class="card-title">Fruit Ripening / Harvesting</h5>
+          <p class="card-text"> Fruit changes color from light green to red, and finally dark red or orange</p>
+          <!-- <a href="{% url 'particles' %}" class="btn" name="harvestbtn">Click here to view more</a> -->
+          <form class="Btn_display" method="post">
+          {% csrf_token %}
+            <input class = "btn" type="submit" name="harvestbtn" value="Click here to view more">
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+</div>
+<br><br>
+{% if clicked == "seedclick" %}
+
+    <table align="center">
+      <div class="theading" align="center">
+        Seed Stage
+      </div>
+<br>
+      <tr>
+      <td>
+        Timeline
+      </td>
+      <td>
+        {{ context.0 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Soil Temperature
+      </td>
+      <td>
+        {{ context.1 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Soil Moisture
+      </td>
+      <td>
+        {{ context.2 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Leaf Wetness
+      </td>
+      <td>
+        {{ context.3 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Stem Diameter
+      </td>
+      <td>
+        {{ context.4 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        pH
+      </td>
+      <td>
+        {{ context.5 }}
+      </td>
+      </tr>
+
+    </table>
+
+
+{% endif %}
+
+{% if clicked == "saplingsclick" %}
+
+    <table align="center">
+      <div class="theading" align="center">
+        Saplings Stage
+      </div>
+<br>
+      <tr>
+      <td>
+        Timeline
+      </td>
+      <td>
+        {{ context.0 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Soil Temperature
+      </td>
+      <td>
+        {{ context.1 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Soil Moisture
+      </td>
+      <td>
+        {{ context.2 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Leaf Wetness
+      </td>
+      <td>
+        {{ context.3 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Stem Diameter
+      </td>
+      <td>
+        {{ context.4 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        pH
+      </td>
+      <td>
+        {{ context.5 }}
+      </td>
+      </tr>
+
+    </table>
+
+
+{% endif %}
+
+{% if clicked == "plantclick" %}
+
+    <table align="center">
+      <div class="theading" align="center">
+        Plant Stage
+      </div>
+<br>
+      <tr>
+      <td>
+        Timeline
+      </td>
+      <td>
+        {{ context.0 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Soil Temperature
+      </td>
+      <td>
+        {{ context.1 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Soil Moisture
+      </td>
+      <td>
+        {{ context.2 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Leaf Wetness
+      </td>
+      <td>
+        {{ context.3 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Stem Diameter
+      </td>
+      <td>
+        {{ context.4 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        pH
+      </td>
+      <td>
+        {{ context.5 }}
+      </td>
+      </tr>
+
+    </table>
+
+
+{% endif %}
+
+{% if clicked == "flowerclick" %}
+
+    <table align="center">
+      <div class="theading" align="center">
+        Flower Stage
+      </div>
+<br>
+      <tr>
+      <td>
+        Timeline
+      </td>
+      <td>
+        {{ context.0 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Soil Temperature
+      </td>
+      <td>
+        {{ context.1 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Soil Moisture
+      </td>
+      <td>
+        {{ context.2 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Leaf Wetness
+      </td>
+      <td>
+        {{ context.3 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Stem Diameter
+      </td>
+      <td>
+        {{ context.4 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        pH
+      </td>
+      <td>
+        {{ context.5 }}
+      </td>
+      </tr>
+
+    </table>
+
+
+{% endif %}
+
+{% if clicked == "fruitclick" %}
+
+    <table align="center">
+      <div class="theading" align="center">
+        Fruit Stage
+      </div>
+<br>
+      <tr>
+      <td>
+        Timeline
+      </td>
+      <td>
+        {{ context.0 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Soil Temperature
+      </td>
+      <td>
+        {{ context.1 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Soil Moisture
+      </td>
+      <td>
+        {{ context.2 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Leaf Wetness
+      </td>
+      <td>
+        {{ context.3 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Stem Diameter
+      </td>
+      <td>
+        {{ context.4 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        pH
+      </td>
+      <td>
+        {{ context.5 }}
+      </td>
+      </tr>
+
+    </table>
+
+
+{% endif %}
+
+{% if clicked == "harvestclick" %}
+
+    <table>
+      <div class="theading" align="center">
+        Harvest Stage
+      </div>
+<br>
+      <tr>
+      <td>
+        Timeline
+      </td>
+      <td>
+        {{ context.0 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Soil Temperature
+      </td>
+      <td>
+        {{ context.1 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Soil Moisture
+      </td>
+      <td>
+        {{ context.2 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Leaf Wetness
+      </td>
+      <td>
+        {{ context.3 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        Stem Diameter
+      </td>
+      <td>
+        {{ context.4 }}
+      </td>
+      </tr>
+
+      <tr>
+      <td>
+        pH
+      </td>
+      <td>
+        {{ context.5 }}
+      </td>
+      </tr>
+
+    </table>
+
+
+{% endif %}
+
+<!-- <hr>
+  <div class="card">
+    <div class="card-body" align="center">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn ">Click here to view more</a>
+    </div>
+  </div>
+
+</div> -->
+
+<!-- scripts -->
+<!-- <script src="{% static "/javascript/particles.js" %}"></script> -->
+<script src="{% static "/javascript/app.js" %}"></script>
+
+
+
+{% endblock %}

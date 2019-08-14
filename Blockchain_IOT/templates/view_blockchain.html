@@ -1,0 +1,150 @@
+{% extends "home.html" %}
+{% load staticfiles %}
+{% block navbar %}
+
+  <!-- <div class="container">
+
+    {% for i in chain_data %}
+    {% if i.index == 0 %}
+    <ul>
+      <br>
+      <ul><strong> Genesis Block  </strong></ul>
+      <ul>Previous Hash : {{ i.previous_hash }}</ul>
+      <ul>Current Hash : {{ i.hash }}</ul>
+      <ul>Nonce : {{ i.nonce }}</ul>
+      <ul>Timestamp : {{ i.timestamp }}</ul>
+    </ul>
+
+    {% else %}
+    <hr>
+    <ul>
+      <ul><strong> Block : {{ i.index }} </strong></ul>
+
+        <ul> Farmer : {{ i.crop_info.0.0 }}</ul>
+        <ul> Crop Name : {{ i.crop_info.0.1 }}</ul>
+        <ul> Crop Species : {{ i.crop_info.0.2 }}</ul>
+        <ul> Geolocation Latitude : {{ i.crop_info.0.3 }}</ul>
+        <ul> Geolocation Longitude : {{ i.crop_info.0.4 }}</ul>
+        <ul> Crop Age : {{ i.crop_info.0.5 }}</ul>
+        <ul> Crop Height : {{ i.crop_info.0.6 }}</ul>
+
+      <ul>Previous Hash : {{ i.previous_hash }}</ul>
+      <ul>Current Hash : {{ i.hash }}</ul>
+      <ul>Nonce : {{ i.nonce }}</ul>
+      <ul>Timestamp : {{ i.timestamp }}</ul>
+    </ul>
+
+    {% endif %}
+    {% endfor %}
+
+  </div> -->
+
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "/css/view.css" %}">
+
+
+  <div class="container">
+
+    {% for i,j in context %}
+    {% ifnotequal i.index 0 %}
+
+    <div class="card col-md-3">
+      <h3 class="title">{{ j }}</h3>
+      <div class="bar">
+        <div class="emptybar"></div>
+        <div class="filledbar"></div>
+      </div>
+
+      <h4>
+        Crop Info
+      </h4>
+
+      <ul class="info">
+        <p><strong> Block : {{ i.index }} </strong> <br>
+           Farmer : {{ i.crop_info.0.0 }} <br>
+           Name : {{ i.crop_info.0.1 }} <br>
+           Species : {{ i.crop_info.0.2 }}  <br>
+           <!-- Latitude : {{ i.crop_info.0.3 }} <br>
+           Longitude : {{ i.crop_info.0.4 }} <br> -->
+           <a target="_blank" href="https://www.google.com/maps/@12.9620777,77.7112293,18z">Geolocation</a><br>
+           Age : {{ i.crop_info.0.3 }} <br>
+           Height : {{ i.crop_info.0.4 }}
+        </p>
+
+    </div>
+    
+    {% endifnotequal %}
+    {% endfor %}
+
+
+
+    <!-- <div class="card col-md-3">
+      <h3 class="title">Sapling - 12 inches</h3>
+      <div class="bar">
+        <div class="emptybar"></div>
+        <div class="filledbar"></div>
+      </div>
+      <div class="circle">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle class="stroke" cx="60" cy="60" r="50"/>
+      </svg>
+      </div>
+    </div>
+
+    <div class="card col-md-3">
+      <h3 class="title">Mature Plant - 3 ft</h3>
+      <div class="bar">
+        <div class="emptybar"></div>
+        <div class="filledbar"></div>
+      </div>
+      <div class="circle">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle class="stroke" cx="60" cy="60" r="50"/>
+      </svg>
+      </div>
+    </div>
+
+    <div class="card col-md-3">
+      <h3 class="title">Flower Stage</h3>
+      <div class="bar">
+        <div class="emptybar"></div>
+        <div class="filledbar"></div>
+      </div>
+      <div class="circle">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle class="stroke" cx="60" cy="60" r="50"/>
+      </svg>
+      </div>
+    </div>
+
+    <div class="card col-md-3">
+      <h3 class="title">Fruit Development</h3>
+      <div class="bar">
+        <div class="emptybar"></div>
+        <div class="filledbar"></div>
+      </div>
+      <div class="circle">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle class="stroke" cx="60" cy="60" r="50"/>
+      </svg>
+      </div>
+    </div>
+
+    <div class="card col-md-3">
+      <h3 class="title">Fruit Ripening</h3>
+      <div class="bar">
+        <div class="emptybar"></div>
+        <div class="filledbar"></div>
+      </div>
+      <div class="circle">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle class="stroke" cx="60" cy="60" r="50"/>
+      </svg>
+      </div>
+    </div> -->
+
+  </div>
+
+
+{% endblock %}
