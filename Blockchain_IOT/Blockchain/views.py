@@ -124,7 +124,7 @@ def particles(request):
 
     elif(request.POST.get('harvestbtn')):
         print("harvestbtn clicked")
-        sensor_data = ['60-100 Days', '22', '34', '18', '6', '7' ]
+        sensor_data = ['60-150 Days', '22', '34', '18', '6', '7' ]
         context =  sensor_data
         clicked = 'harvestclick'
         print(context)
